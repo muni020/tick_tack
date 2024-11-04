@@ -1,0 +1,11 @@
+            <div class="box bg-primary text-white d-flex align-items-center justify-content-center" style="height: 20vh;">
+                <%= link_to "/game/check/#{local_assigns[:index] }", data: { turbo_method: :post}, class: "btn btn-primary d-block text-center mt-2" do %>
+                    <% if element == 0 %>
+                        <%= image_tag "tick.png", alt: "Description of the image", class: "image-class", style: "width: 50px; height: 50px;" %>
+                    <% elsif element == 1 %>
+                        <%= image_tag "cross.png", alt: "Description of the image", class: "image-class", style: "width: 50px; height: 50px;" %>
+                    <% else %>
+                        Empty
+                    <% end %>
+                <% end %>
+            </div>

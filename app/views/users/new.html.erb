@@ -1,0 +1,28 @@
+<h1 class="text-center text-primary mt-4">Here is SignUp Form</h1>
+
+<%= form_with model: @user, class: 'container mt-4' do |form| %>
+  <div class="mb-3">
+    <%= form.label :name, class: 'form-label' %>
+    <%= form.text_field :name, class: 'form-control' %>
+    <% @user.errors.full_messages_for(:name).each do |message| %>
+          <div class="text-danger">
+            <%= message %>
+          </div>
+  <% end %>
+  </div>
+  
+
+  <div class="mb-3">
+    <%= form.label :password, class: 'form-label' %>
+    <%= form.password_field :password, class: 'form-control' %>
+    <% @user.errors.full_messages_for(:password).each do |message| %>
+          <div class="text-danger">
+            <%= message %>
+          </div>
+  <% end %>
+  </div>
+  
+  <div>
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>
